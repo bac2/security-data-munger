@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<nvd xmlns="http://scap.nist.gov/schema/feed/vulnerability/2.0" xmlns:scap-core="http://scap.nist.gov/schema/scap-core/0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vuln="http://scap.nist.gov/schema/vulnerability/0.4" xmlns:cpe-lang="http://cpe.mitre.org/language/2.0" xmlns:patch="http://scap.nist.gov/schema/patch/0.1" xmlns:cvss="http://scap.nist.gov/schema/cvss-v2/0.2" nvd_xml_version="2.0" pub_date="2014-03-26T20:19:04" xsi:schemaLocation="http://scap.nist.gov/schema/patch/0.1 http://nvd.nist.gov/schema/patch_0.1.xsd http://scap.nist.gov/schema/scap-core/0.1 http://nvd.nist.gov/schema/scap-core_0.1.xsd http://scap.nist.gov/schema/feed/vulnerability/2.0 http://nvd.nist.gov/schema/nvd-cve-feed_2.0.xsd">
+  <entry id="CVE-2003-0001">
+    <vuln:vulnerable-configuration id="http://nvd.nist.gov/">
+      <cpe-lang:logical-test negate="false" operator="OR">
+        <cpe-lang:fact-ref name="cpe:/o:freebsd:freebsd:4.2"/>
+        <cpe-lang:fact-ref name="cpe:/o:freebsd:freebsd:4.3"/>
+        <cpe-lang:fact-ref name="cpe:/o:freebsd:freebsd:4.4"/>
+        <cpe-lang:fact-ref name="cpe:/o:freebsd:freebsd:4.5"/>
+        <cpe-lang:fact-ref name="cpe:/o:freebsd:freebsd:4.6"/>
+        <cpe-lang:fact-ref name="cpe:/o:freebsd:freebsd:4.7"/>
+        <cpe-lang:fact-ref name="cpe:/o:linux:linux_kernel:2.4.1"/>
+        <cpe-lang:fact-ref name="cpe:/o:linux:linux_kernel:2.4.10"/>
+        <cpe-lang:fact-ref name="cpe:/o:linux:linux_kernel:2.4.11"/>
+        <cpe-lang:fact-ref name="cpe:/o:linux:linux_kernel:2.4.12"/>
+        <cpe-lang:fact-ref name="cpe:/o:linux:linux_kernel:2.4.13"/>
+        <cpe-lang:fact-ref name="cpe:/o:linux:linux_kernel:2.4.14"/>
+        <cpe-lang:fact-ref name="cpe:/o:linux:linux_kernel:2.4.15"/>
+        <cpe-lang:fact-ref name="cpe:/o:linux:linux_kernel:2.4.16"/>
+        <cpe-lang:fact-ref name="cpe:/o:linux:linux_kernel:2.4.17"/>
+        <cpe-lang:fact-ref name="cpe:/o:linux:linux_kernel:2.4.18"/>
+        <cpe-lang:fact-ref name="cpe:/o:linux:linux_kernel:2.4.19"/>
+        <cpe-lang:fact-ref name="cpe:/o:linux:linux_kernel:2.4.2"/>
+        <cpe-lang:fact-ref name="cpe:/o:linux:linux_kernel:2.4.20"/>
+        <cpe-lang:fact-ref name="cpe:/o:linux:linux_kernel:2.4.3"/>
+        <cpe-lang:fact-ref name="cpe:/o:linux:linux_kernel:2.4.4"/>
+        <cpe-lang:fact-ref name="cpe:/o:linux:linux_kernel:2.4.5"/>
+        <cpe-lang:fact-ref name="cpe:/o:linux:linux_kernel:2.4.6"/>
+        <cpe-lang:fact-ref name="cpe:/o:linux:linux_kernel:2.4.7"/>
+        <cpe-lang:fact-ref name="cpe:/o:linux:linux_kernel:2.4.8"/>
+        <cpe-lang:fact-ref name="cpe:/o:linux:linux_kernel:2.4.9"/>
+        <cpe-lang:fact-ref name="cpe:/o:microsoft:windows_2000:::advanced_server"/>
+        <cpe-lang:fact-ref name="cpe:/o:microsoft:windows_2000:::datacenter_server"/>
+        <cpe-lang:fact-ref name="cpe:/o:microsoft:windows_2000:::professional"/>
+        <cpe-lang:fact-ref name="cpe:/o:microsoft:windows_2000:::server"/>
+        <cpe-lang:fact-ref name="cpe:/o:microsoft:windows_2000::sp1:advanced_server"/>
+        <cpe-lang:fact-ref name="cpe:/o:microsoft:windows_2000::sp1:datacenter_server"/>
+        <cpe-lang:fact-ref name="cpe:/o:microsoft:windows_2000::sp1:professional"/>
+        <cpe-lang:fact-ref name="cpe:/o:microsoft:windows_2000::sp1:server"/>
+        <cpe-lang:fact-ref name="cpe:/o:microsoft:windows_2000::sp2:advanced_server"/>
+        <cpe-lang:fact-ref name="cpe:/o:microsoft:windows_2000::sp2:datacenter_server"/>
+        <cpe-lang:fact-ref name="cpe:/o:microsoft:windows_2000::sp2:professional"/>
+        <cpe-lang:fact-ref name="cpe:/o:microsoft:windows_2000::sp2:server"/>
+        <cpe-lang:fact-ref name="cpe:/o:microsoft:windows_2000_terminal_services"/>
+        <cpe-lang:fact-ref name="cpe:/o:microsoft:windows_2000_terminal_services::sp1"/>
+        <cpe-lang:fact-ref name="cpe:/o:microsoft:windows_2000_terminal_services::sp2"/>
+        <cpe-lang:fact-ref name="cpe:/o:netbsd:netbsd:1.5"/>
+        <cpe-lang:fact-ref name="cpe:/o:netbsd:netbsd:1.5.1"/>
+        <cpe-lang:fact-ref name="cpe:/o:netbsd:netbsd:1.5.2"/>
+        <cpe-lang:fact-ref name="cpe:/o:netbsd:netbsd:1.5.3"/>
+        <cpe-lang:fact-ref name="cpe:/o:netbsd:netbsd:1.6"/>
+      </cpe-lang:logical-test>
+    </vuln:vulnerable-configuration>
+    <vuln:vulnerable-software-list>
+      <vuln:product>cpe:/o:netbsd:netbsd:1.5.3</vuln:product>
+      <vuln:product>cpe:/o:netbsd:netbsd:1.5.2</vuln:product>
+      <vuln:product>cpe:/o:microsoft:windows_2000::sp1:server</vuln:product>
+      <vuln:product>cpe:/o:netbsd:netbsd:1.5.1</vuln:product>
+      <vuln:product>cpe:/o:microsoft:windows_2000_terminal_services</vuln:product>
+      <vuln:product>cpe:/o:microsoft:windows_2000::sp2:server</vuln:product>
+      <vuln:product>cpe:/o:microsoft:windows_2000:::server</vuln:product>
+      <vuln:product>cpe:/o:linux:linux_kernel:2.4.5</vuln:product>
+      <vuln:product>cpe:/o:linux:linux_kernel:2.4.20</vuln:product>
+      <vuln:product>cpe:/o:linux:linux_kernel:2.4.4</vuln:product>
+      <vuln:product>cpe:/o:microsoft:windows_2000::sp2:datacenter_server</vuln:product>
+      <vuln:product>cpe:/o:linux:linux_kernel:2.4.3</vuln:product>
+      <vuln:product>cpe:/o:linux:linux_kernel:2.4.2</vuln:product>
+      <vuln:product>cpe:/o:linux:linux_kernel:2.4.1</vuln:product>
+      <vuln:product>cpe:/o:microsoft:windows_2000::sp1:professional</vuln:product>
+      <vuln:product>cpe:/o:microsoft:windows_2000::sp1:datacenter_server</vuln:product>
+      <vuln:product>cpe:/o:microsoft:windows_2000::sp2:professional</vuln:product>
+      <vuln:product>cpe:/o:netbsd:netbsd:1.6</vuln:product>
+      <vuln:product>cpe:/o:netbsd:netbsd:1.5</vuln:product>
+      <vuln:product>cpe:/o:microsoft:windows_2000:::professional</vuln:product>
+      <vuln:product>cpe:/o:microsoft:windows_2000::sp2:advanced_server</vuln:product>
+      <vuln:product>cpe:/o:microsoft:windows_2000::sp1:advanced_server</vuln:product>
+      <vuln:product>cpe:/o:microsoft:windows_2000_terminal_services::sp1</vuln:product>
+      <vuln:product>cpe:/o:microsoft:windows_2000:::advanced_server</vuln:product>
+      <vuln:product>cpe:/o:linux:linux_kernel:2.4.16</vuln:product>
+      <vuln:product>cpe:/o:microsoft:windows_2000_terminal_services::sp2</vuln:product>
+      <vuln:product>cpe:/o:linux:linux_kernel:2.4.15</vuln:product>
+      <vuln:product>cpe:/o:linux:linux_kernel:2.4.14</vuln:product>
+      <vuln:product>cpe:/o:linux:linux_kernel:2.4.13</vuln:product>
+      <vuln:product>cpe:/o:linux:linux_kernel:2.4.12</vuln:product>
+      <vuln:product>cpe:/o:linux:linux_kernel:2.4.11</vuln:product>
+      <vuln:product>cpe:/o:linux:linux_kernel:2.4.10</vuln:product>
+      <vuln:product>cpe:/o:freebsd:freebsd:4.2</vuln:product>
+      <vuln:product>cpe:/o:microsoft:windows_2000:::datacenter_server</vuln:product>
+      <vuln:product>cpe:/o:freebsd:freebsd:4.3</vuln:product>
+      <vuln:product>cpe:/o:freebsd:freebsd:4.4</vuln:product>
+      <vuln:product>cpe:/o:freebsd:freebsd:4.5</vuln:product>
+      <vuln:product>cpe:/o:freebsd:freebsd:4.6</vuln:product>
+      <vuln:product>cpe:/o:linux:linux_kernel:2.4.6</vuln:product>
+      <vuln:product>cpe:/o:freebsd:freebsd:4.7</vuln:product>
+      <vuln:product>cpe:/o:linux:linux_kernel:2.4.19</vuln:product>
+      <vuln:product>cpe:/o:linux:linux_kernel:2.4.7</vuln:product>
+      <vuln:product>cpe:/o:linux:linux_kernel:2.4.8</vuln:product>
+      <vuln:product>cpe:/o:linux:linux_kernel:2.4.18</vuln:product>
+      <vuln:product>cpe:/o:linux:linux_kernel:2.4.9</vuln:product>
+      <vuln:product>cpe:/o:linux:linux_kernel:2.4.17</vuln:product>
+    </vuln:vulnerable-software-list>
+    <vuln:cve-id>CVE-2003-0001</vuln:cve-id>
+    <vuln:published-datetime>2003-01-17T00:00:00.000-05:00</vuln:published-datetime>
+    <vuln:last-modified-datetime>2008-09-10T15:17:21.290-04:00</vuln:last-modified-datetime>
+    <vuln:cvss>
+      <cvss:base_metrics upgraded-from-version="1.0">
+        <cvss:score>5.0</cvss:score>
+        <cvss:access-vector approximated="true">NETWORK</cvss:access-vector>
+        <cvss:access-complexity>LOW</cvss:access-complexity>
+        <cvss:authentication>NONE</cvss:authentication>
+        <cvss:confidentiality-impact>PARTIAL</cvss:confidentiality-impact>
+        <cvss:integrity-impact>NONE</cvss:integrity-impact>
+        <cvss:availability-impact>NONE</cvss:availability-impact>
+        <cvss:source>http://nvd.nist.gov</cvss:source>
+        <cvss:generated-on-datetime>2004-01-01T00:00:00.000-05:00</cvss:generated-on-datetime>
+      </cvss:base_metrics>
+    </vuln:cvss>
+    <vuln:assessment_check name="oval:org.mitre.oval:def:2665" href="http://oval.mitre.org/repository/data/getDef?id=oval:org.mitre.oval:def:2665" system="http://oval.mitre.org/XMLSchema/oval-definitions-5"/>
+    <vuln:references xml:lang="en" reference_type="VENDOR_ADVISORY">
+      <vuln:source>CERT-VN</vuln:source>
+      <vuln:reference href="http://www.kb.cert.org/vuls/id/412115" xml:lang="en">VU#412115</vuln:reference>
+    </vuln:references>
+    <vuln:references xml:lang="en" reference_type="UNKNOWN">
+      <vuln:source>REDHAT</vuln:source>
+      <vuln:reference href="http://www.redhat.com/support/errata/RHSA-2003-025.html" xml:lang="en">RHSA-2003:025</vuln:reference>
+    </vuln:references>
+    <vuln:references xml:lang="en" reference_type="UNKNOWN">
+      <vuln:source>MISC</vuln:source>
+      <vuln:reference href="http://www.atstake.com/research/advisories/2003/atstake_etherleak_report.pdf" xml:lang="en">http://www.atstake.com/research/advisories/2003/atstake_etherleak_report.pdf</vuln:reference>
+    </vuln:references>
+    <vuln:references xml:lang="en" reference_type="VENDOR_ADVISORY">
+      <vuln:source>ATSTAKE</vuln:source>
+      <vuln:reference href="http://www.atstake.com/research/advisories/2003/a010603-1.txt" xml:lang="en">A010603-1</vuln:reference>
+    </vuln:references>
+    <vuln:references xml:lang="en" reference_type="VENDOR_ADVISORY">
+      <vuln:source>BUGTRAQ</vuln:source>
+      <vuln:reference href="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=104222046632243&amp;w=2" xml:lang="en">20030110 More information regarding Etherleak</vuln:reference>
+    </vuln:references>
+    <vuln:references xml:lang="en" reference_type="UNKNOWN">
+      <vuln:source>VULNWATCH</vuln:source>
+      <vuln:reference href="http://archives.neohapsis.com/archives/vulnwatch/2003-q1/0016.html" xml:lang="en">20030110 More information regarding Etherleak</vuln:reference>
+    </vuln:references>
+    <vuln:references xml:lang="en" reference_type="UNKNOWN">
+      <vuln:source>BUGTRAQ</vuln:source>
+      <vuln:reference href="http://www.securityfocus.com/archive/1/archive/1/307564/30/26270/threaded" xml:lang="en">20030117 Re: More information regarding Etherleak</vuln:reference>
+    </vuln:references>
+    <vuln:references xml:lang="en" reference_type="UNKNOWN">
+      <vuln:source>BUGTRAQ</vuln:source>
+      <vuln:reference href="http://www.securityfocus.com/archive/1/archive/1/305335/30/26420/threaded" xml:lang="en">20030106 Etherleak: Ethernet frame padding information leakage (A010603-1)</vuln:reference>
+    </vuln:references>
+    <vuln:references xml:lang="en" reference_type="UNKNOWN">
+      <vuln:source>REDHAT</vuln:source>
+      <vuln:reference href="http://www.redhat.com/support/errata/RHSA-2003-088.html" xml:lang="en">RHSA-2003:088</vuln:reference>
+    </vuln:references>
+    <vuln:references xml:lang="en" reference_type="UNKNOWN">
+      <vuln:source>OSVDB</vuln:source>
+      <vuln:reference href="http://www.osvdb.org/9962" xml:lang="en">9962</vuln:reference>
+    </vuln:references>
+    <vuln:references xml:lang="en" reference_type="UNKNOWN">
+      <vuln:source>SECUNIA</vuln:source>
+      <vuln:reference href="http://secunia.com/advisories/7996" xml:lang="en">7996</vuln:reference>
+    </vuln:references>
+    <vuln:scanner>
+      <vuln:definition name="oval:org.mitre.oval:def:2665" href="http://oval.mitre.org/repository/data/DownloadDefinition?id=oval:org.mitre.oval:def:2665" system="http://oval.mitre.org/XMLSchema/oval-definitions-5"/>
+    </vuln:scanner>
+    <vuln:summary>Multiple ethernet Network Interface Card (NIC) device drivers do not pad frames with null bytes, which allows remote attackers to obtain information from previous packets or kernel memory by using malformed packets, as demonstrated by Etherleak.</vuln:summary>
+  </entry>
