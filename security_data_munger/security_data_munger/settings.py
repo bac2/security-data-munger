@@ -1,5 +1,5 @@
 """
-Django settings for datamunger project.
+Django settings for security_data_munger project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'yffm9uko$!5!0ki&t!8%2*s)kbe*-@-vh!a&3)yg2q!wnz112p'
+SECRET_KEY = 'm3+zimwcg9itt^035ylhr^vhxt611a)y5(&sgcg1&lf8!ao*$^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'datamunger',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -47,9 +48,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'datamunger.urls'
+ROOT_URLCONF = 'security_data_munger.urls'
 
-WSGI_APPLICATION = 'datamunger.wsgi.application'
+WSGI_APPLICATION = 'security_data_munger.wsgi.application'
 
 
 # Database
