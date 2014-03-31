@@ -10,6 +10,6 @@ entry = soup.find_all('entry')
 for e in entry:
 	cve = e.find('vuln:cve-id').string
 	summary = e.find('vuln:summary').string
-	software = e.find_all('vuln:vulnerable-software-list')
+	software = e.find_all('vuln:product')
 	for product in software:
 		print product.string
