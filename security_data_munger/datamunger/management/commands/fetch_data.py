@@ -47,9 +47,26 @@ class Command(BaseCommand):
 			for e in entry:
 				cve = e.find('vuln:cve-id').string
 				summary = e.find('vuln:summary').string
+
+				try:
+					v = Vulnerability.objects.get(cve=cve)
+					v.delete()
+					a = Application.objects.filter(vulnerability__isnull=True)
+					a.delete()
+				except Vulnerability.DoesNotExist:
+					pass
+					
 				v = Vulnerability(cve=cve,summary=summary)
 				v.save()
+
 				software = e.find_all('vuln:product')
 				for product in software:
-					a = Application(name=product.string,vulnerability=v)
-					a.save()
+					try:
+						a = Application.objects.get(cpe=product.string)
+						a.vulnerability.add(v)
+						a.save()
+					except Application.DoesNotExist:
+						a = Application(cpe=product.string)
+						a.save()
+						a.vulnerability.add(v)
+						a.save()
