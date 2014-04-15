@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from datamunger.models import Vulnerability, Application
+from datamunger.models import Vulnerability, Application, Reference
 import urllib2
 from bs4 import BeautifulSoup
 from optparse import make_option
@@ -40,6 +40,8 @@ class Command(BaseCommand):
 		]
 
 		for url in urls:
+			print 'Checking ' + url
+
 			page = urllib2.urlopen(url)
 			soup = BeautifulSoup(page.read())
 			entry = soup.find_all('entry')
@@ -47,6 +49,17 @@ class Command(BaseCommand):
 			for e in entry:
 				cve = e.find('vuln:cve-id').string
 				summary = e.find('vuln:summary').string
+
+				published = e.find('vuln:published-datetime').string
+				last_modified = e.find('vuln:last-modified-datetime').string
+			
+				score = e.find('cvss:score').string
+				access_vector = e.find('cvss:access-vector').string
+				access_complexity = e.find('cvss:access-complexity').string
+				authentication = e.find('cvss:authentication').string
+				confidentiality_impact = e.find('cvss:confidentiality-impact').string
+				integrity_impact = e.find('cvss:integrity-impact').string
+				availability_impact = e.find('cvss:availability-impact').string
 
 				try:
 					v = Vulnerability.objects.get(cve=cve)
@@ -56,7 +69,7 @@ class Command(BaseCommand):
 				except Vulnerability.DoesNotExist:
 					pass
 					
-				v = Vulnerability(cve=cve,summary=summary)
+				v = Vulnerability(cve=cve,summary=summary,published=published,last_modified=last_modified,score=score,access_vector=access_vector,access_complexity=access_complexity,authentication=authentication,confidentiality_impact=confidentiality_impact,integrity_impact=integrity_impact,availability_impact=availability_impact)
 				v.save()
 
 				software = e.find_all('vuln:product')
@@ -70,3 +83,12 @@ class Command(BaseCommand):
 						a.save()
 						a.vulnerability.add(v)
 						a.save()
+
+				reference = e.find_all('vuln:references')
+				for ref in reference:
+					type =  ref['reference_type']
+					source = ref.find('vuln:source').string
+					address =  ref.find('vuln:reference')['href']
+					text = ref.find('vuln:reference').string
+					r = Reference(vulnerability=v,source=source,address=address,text=text,type=type)
+					r.save()
