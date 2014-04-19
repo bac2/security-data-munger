@@ -9,27 +9,6 @@ from optparse import make_option
 
 class Command(BaseCommand):
 
-	urls = [
-		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-modified.xml'
-	]
-
-	urls_initialise = [
-		'http://users.ecs.soton.ac.uk/temt1g10/temp.xml',
-#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2002.xml',	
-#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2003.xml',	
-#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2004.xml',	
-#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2005.xml',	
-#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2006.xml',	
-#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2007.xml',	
-#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2008.xml',	
-#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2009.xml',	
-#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2010.xml',	
-#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2011.xml',	
-#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2012.xml',	
-#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2013.xml',	
-#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2014.xml'
-	]
-
 	option_list = BaseCommand.option_list + (
 		make_option('--initialise',
 			action='store_true',
@@ -51,20 +30,20 @@ class Command(BaseCommand):
 		]
 
 		urls_initialise = [
-			'http://users.ecs.soton.ac.uk/temt1g10/temp.xml',
-	#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2002.xml',	
-	#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2003.xml',	
-	#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2004.xml',	
-	#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2005.xml',	
-	#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2006.xml',	
-	#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2007.xml',	
-	#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2008.xml',	
-	#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2009.xml',	
-	#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2010.xml',	
-	#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2011.xml',	
-	#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2012.xml',	
-	#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2013.xml',	
-	#		'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2014.xml'
+	#		'http://users.ecs.soton.ac.uk/temt1g10/temp.xml',
+			'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2002.xml',	
+			'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2003.xml',	
+			'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2004.xml',	
+			'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2005.xml',	
+			'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2006.xml',	
+			'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2007.xml',	
+			'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2008.xml',	
+			'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2009.xml',	
+			'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2010.xml',	
+			'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2011.xml',	
+			'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2012.xml',	
+			'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2013.xml',	
+			'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-2014.xml'
 		]
 
 		if options['cpe']:
