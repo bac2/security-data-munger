@@ -1,6 +1,8 @@
 from django.core.management.base import BaseCommand, CommandError
-from datamunger.models import Vulnerability, Application, Reference
+from datamunger.models import Vulnerability, Application, Reference, Cpe
 import urllib2
+import gzip
+from StringIO import StringIO
 from bs4 import BeautifulSoup
 from optparse import make_option
 
@@ -12,10 +14,46 @@ class Command(BaseCommand):
 			dest='initialise',
 			default=False,
 			help='Pulls entire history'),
+		make_option('--cpe',
+			action='store_true',
+			dest='cpe',
+			default=False,
+			help='Updates cpe data'),
 		)
 
 	def handle(self, *args, **options):
 
+		print 'Saving CPE 2.3 data'
+		self.cpe('http://static.nvd.nist.gov/feeds/xml/cpe/dictionary/official-cpe-dictionary_v2.3.xml.gz')
+		print 'Saving CPE 2.2 data'
+		self.cpe('http://static.nvd.nist.gov/feeds/xml/cpe/dictionary/official-cpe-dictionary_v2.2.xml.gz')
+		print 'Saving CVE data'
+#		self.cve()
+
+	def cpe(self, url):
+		if options['cpe']:
+			cpe_dictionary = urllib2.urlopen(url)
+			data = cpe_dictionary.read()
+			data = StringIO(data)
+			gzipper = gzip.GzipFile(fileobj=data)
+			xml = gzipper.read()
+			cpe_soup = BeautifulSoup(xml)
+
+			cpe_list = cpe_soup.find_all('cpe-item')
+			count = 0
+			for item in cpe_list:
+				print count + ' of ' + len(cpe_list)
+				count += 1
+				short_cpe = item['name']
+				short_cpe = short_cpe.replace('~','*:')
+				array = short_cpe.split(':')
+				while len(array) < 12:
+					array.append('*')
+				title = item.find('title', { 'xml:lang' : 'en-US' }).string
+				obj, created = Cpe.objects.get_or_create(cpe=item['name'],part=array[1],vendor=array[2],product=array[3],version=array[4],update=array[5],edition=array[6],language=array[7],sw_edition=array[8],target_sw=array[9],target_hw=array[10],other=array[11],title=title)
+
+	def cve():
+	
 		urls = [
 			'http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-modified.xml'
 		]
@@ -45,8 +83,10 @@ class Command(BaseCommand):
 			page = urllib2.urlopen(url)
 			soup = BeautifulSoup(page.read())
 			entry = soup.find_all('entry')
-
+			
+			count = 0
 			for e in entry:
+				print count + ' of ' + len(entry)
 				cve = e.find('vuln:cve-id').string
 				summary = e.find('vuln:summary').string
 
@@ -74,12 +114,14 @@ class Command(BaseCommand):
 
 				software = e.find_all('vuln:product')
 				for product in software:
+					cpe = Cpe.objects.get(cpe=product.string)
+
 					try:
-						a = Application.objects.get(cpe=product.string)
+						a = Application.objects.get(cpe=cpe)
 						a.vulnerability.add(v)
 						a.save()
 					except Application.DoesNotExist:
-						a = Application(cpe=product.string)
+						a = Application(cpe=cpe)
 						a.save()
 						a.vulnerability.add(v)
 						a.save()
@@ -92,3 +134,4 @@ class Command(BaseCommand):
 					text = ref.find('vuln:reference').string
 					r = Reference(vulnerability=v,source=source,address=address,text=text,type=type)
 					r.save()
+
